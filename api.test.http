@@ -1,0 +1,156 @@
+@base_url = http://localhost
+
+@port = 3000
+
+@url = {{base_url}}:{{port}}
+
+@api_covid = {{url}}/covid
+
+###
+GET {{api_covid}}/getdataall HTTP/1.1
+
+###
+GET {{api_covid}}/getdata/1 HTTP/1.1
+
+###
+POST {{api_covid}}/getdatabyfname HTTP/1.1
+Content-Type: application/json
+
+{
+    "fname": "อนุ"
+}
+
+###
+POST {{api_covid}}/getdatabylname HTTP/1.1
+Content-Type: application/json
+
+{
+    "lname": "สู"
+}
+
+###
+POST {{api_covid}}/getdatabyidcard HTTP/1.1
+Content-Type: application/json
+
+{
+    "id_card": "1560101512361"
+}
+###
+POST {{api_covid}}/getdatabysubdistrict HTTP/1.1
+Content-Type: application/json
+
+{
+    "sub_district": "ศรีถ้อย"
+}
+
+###
+POST {{api_covid}}/getdatabydistrict HTTP/1.1
+Content-Type: application/json
+
+{
+    "district": "เมือง"
+}
+
+###
+POST {{api_covid}}/getdatabycounty HTTP/1.1
+Content-Type: application/json
+
+{
+    "country": "เชียงใหม่"
+}
+
+###
+POST {{api_covid}}/getdatabypostal HTTP/1.1
+Content-Type: application/json
+
+{
+    "postal": "56130"
+}
+###
+POST {{api_covid}}/getdatabyage HTTP/1.1
+Content-Type: application/json
+
+{
+    "age": "22"
+}
+###
+POST {{api_covid}}/getdatabybetweenage HTTP/1.1
+Content-Type: application/json
+
+{
+    "age_start": "20",
+    "age_stop": "30"
+}
+
+###
+POST {{api_covid}}/getdatabyheight HTTP/1.1
+Content-Type: application/json
+
+{
+    "height": "174"
+}
+###
+POST {{api_covid}}/getdatabybetweenheight HTTP/1.1
+Content-Type: application/json
+
+{
+    "height_start": "150",
+    "height_stop": "170"
+}
+###
+POST {{api_covid}}/getdatabyweight HTTP/1.1
+Content-Type: application/json
+
+{
+    "weight": "52"
+}
+###
+POST {{api_covid}}/getdatabybetweenweight HTTP/1.1
+Content-Type: application/json
+
+{
+    "weight_start": "50",
+    "weight_stop": "60"
+}
+###
+POST {{api_covid}}/getdatabydate HTTP/1.1
+Content-Type: application/json
+
+{
+    "date":"2023-06-29"
+}
+
+###
+POST {{api_covid}}/getdatabybetweendate HTTP/1.1
+Content-Type: application/json
+
+{
+    "date_start":"2023-06-20",
+    "date_stop":"2023-06-30"
+}
+###
+POST {{api_covid}}/addcoviddata HTTP/1.1
+Content-Type: application/json
+
+{
+    "fname": "วิรัตน์",
+    "lname": "สูตรเลข",
+    "id_card": "1560101512361",
+    "age": 22,
+    "height": 174,
+    "weight": 59,
+    "sub_district": "ศรีถ้อย",
+    "district": "แม่ใจ",
+    "country": "พะเยา",
+    "postal": "56130"
+}
+
+###
+PUT {{api_covid}}/updatecoviddata/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "fname": "เอก"
+}
+###
+DELETE {{api_covid}}/delete/2 HTTP/1.1
