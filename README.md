@@ -62,6 +62,7 @@ dialect: mysql
 3. เมื่อใส่ค่าเรียบร้อยแล้วให้ใช้คำสั่งนี้ใน Terminal เพื่อสร้าง DATABASE
 ```
 sequelize db:migrate
+sequelize db:seed:all
 ```
 4. ไปที่ไฟล์ .env แล้วให้ใส่ค่าดังต่อไปนี้
 ```
